@@ -36,6 +36,12 @@ func (t *Tool) Install() error {
 	}
 
 	matches := github.FindAssetsExcluding([]string{".tar.gz"}, github.FindAssetsForArchAndOS(release.Assets))
+	if len(matches) == 2 {
+		// yq provides both a linux-arm and linux-arm64 binary. This may apply to any other arch, so lets
+		// just generally prefer a match on the 64 bit version if it is available, otherwise
+		// we just pass through the failure
+		matches = github.FindAssetsContaining([]string{"64"}, matches)
+	}
 	if len(matches) != 1 {
 		return fmt.Errorf("unexpected number of assets found matching system spec: expected 1, got %d.\nMatching assets: %v", len(matches), matches)
 	}
