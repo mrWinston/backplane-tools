@@ -6,9 +6,7 @@ reviewers:
   - clcollins
   - samanthajayasinghe
   - T0MASD
-  - fahlmant
   - dustman9000
-
 approvers:
   - boranx
   - robotmaxtron
@@ -17,9 +15,7 @@ approvers:
   - clcollins
   - samanthajayasinghe
   - T0MASD
-  - fahlmant
   - dustman9000
-
 maintainers:
   - boranx
   - robotmaxtron
@@ -28,5 +24,4 @@ maintainers:
   - clcollins
   - samanthajayasinghe
   - T0MASD
-  - fahlmant
   - dustman9000
