@@ -18,7 +18,6 @@ import (
 	"github.com/openshift/backplane-tools/pkg/tools/osdctl"
 	"github.com/openshift/backplane-tools/pkg/tools/rosa"
 	"github.com/openshift/backplane-tools/pkg/tools/self"
-	"github.com/openshift/backplane-tools/pkg/tools/servicelogger"
 	"github.com/openshift/backplane-tools/pkg/tools/yq"
 	"github.com/openshift/backplane-tools/pkg/utils"
 )
@@ -97,9 +96,6 @@ func initMap() {
 	} else {
 		toolMap[gcloudTool.Name()] = gcloudTool
 	}
-
-	serviceloggerTool := servicelogger.New()
-	toolMap[serviceloggerTool.Name()] = serviceloggerTool
 
 	ocmContainerTool := ocmcontainer.New()
 	toolMap[ocmContainerTool.Name()] = ocmContainerTool
